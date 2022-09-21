@@ -1,13 +1,14 @@
 package pages;
 
 import java.io.IOException;
-
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import PageLocators.PageName;
+import Resources.DataProviderClass;
 import core.BaseSteps;
 import core.Browser;
 import core.ElementFactory;
@@ -43,12 +44,30 @@ public class HomePage extends BaseSteps{
 		
 	}	
 	
-	@Test(dataProvider="testData", dataProviderClass=ExcelUtilities.class)
-	public static void Home(String key) throws IOException, InterruptedException {							
+	@Test(dataProvider="FP01", dataProviderClass=DataProviderClass.class, priority=1)
+	public static void FP01(String key, String print) throws IOException, InterruptedException {							
 		BaseSteps.setTextToControl(txtSearch, key, PageName.Home);			
 		BaseSteps.clickToControl(btnSearch, PageName.Home);	
 		Thread.sleep(3000);				
 		BaseSteps.clickToControl(addItem, PageName.Home);
-		
+		Assert.assertTrue(key.equals("0"), "Test case failed");
+		System.out.println(print);
 		}
+	
+	
+	@Test(dataProvider="FP02", dataProviderClass=DataProviderClass.class, priority=2)
+	public static void FP02(String text) throws IOException, InterruptedException {							
+		System.out.println(text);	
+		}
+	
+	
+	@Test(dataProvider="FP03", dataProviderClass=DataProviderClass.class, priority=3)
+	public static void FP03(String print, String age, String name) throws IOException, InterruptedException {							
+		System.out.println(print);	
+		System.out.println(age);
+		System.out.println(name);
+		}
+	
+	
+	
 }

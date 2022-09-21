@@ -5,7 +5,9 @@
     <classes>
       <class name="pages.HomePage">
         <methods>
-          <include name="Home"/>
+          <include name="Log"/>
+          <include name="Logout"/>
+          <include name="FP01" invocation-numbers="0 1 2"/>
         </methods>
       </class> <!-- pages.HomePage -->
     </classes>

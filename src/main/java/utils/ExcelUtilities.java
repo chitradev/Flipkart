@@ -24,26 +24,26 @@ import configs.Path;
 
 public class ExcelUtilities {
 	
-	@DataProvider
-	public String[][] testData() {
+	
+	public static String[][] testData(String fileName) {
 
 		String[][] data=null;
         try {           
 
             @SuppressWarnings("resource")
           
-			XSSFWorkbook workbook = new XSSFWorkbook(Path.HomeSearch);
+			XSSFWorkbook workbook = new XSSFWorkbook(fileName);
             XSSFSheet sheet = workbook.getSheet("Sheet1");
             int rowCount = sheet.getPhysicalNumberOfRows();
             int colCount = sheet.getRow(0).getLastCellNum();
 
-             data= new String[rowCount][colCount];
+             data= new String[rowCount-1][colCount];
 
             for (int i = 1; i < rowCount; i++) {               
                 for (int j = 0; j < colCount; j++) {
                 DataFormatter format=new DataFormatter(); 
-                data[i][j]=format.formatCellValue(sheet.getRow(i).getCell(j));     
-                System.out.println(data[i][j]);
+                data[i-1][j]=format.formatCellValue(sheet.getRow(i).getCell(j));     
+                //System.out.println(data[i][j]);
                     
                 }
             }
