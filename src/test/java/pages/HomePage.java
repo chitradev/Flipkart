@@ -56,7 +56,8 @@ public class HomePage extends BaseSteps{
 	
 	
 	@Test(dataProvider="FP02", dataProviderClass=DataProviderClass.class, priority=2)
-	public static void FP02(String text) throws IOException, InterruptedException {							
+	public static void FP02(String text) throws IOException, InterruptedException {	
+		BaseSteps.clickToControl(btnSearch, PageName.Home);	
 		System.out.println(text);	
 		}
 	

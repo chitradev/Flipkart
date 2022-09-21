@@ -11,7 +11,6 @@ public class WebEventListener implements ITestListener {
 	public void onTestFailure(ITestResult result){		
 	try {
 				
-	
 	Browser.takeScreenshot(result.getName());
 			
 		} catch (IOException e) {

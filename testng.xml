@@ -9,6 +9,7 @@
       <class name="pages.HomePage">
       <methods>
       <include name="FP01"/>
+      <include name="FP02"/>
       </methods>  
       </class>          
     </classes>
