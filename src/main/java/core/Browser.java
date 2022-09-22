@@ -71,7 +71,8 @@ public class Browser {
 	
 	String timestamp = new SimpleDateFormat("yyyy_MM_dd__hh_mm_ss").format(new Date());
 	
-	File destFile = new File(System.getProperty("user.dir")+"/Screenshots/TestCases/Flipkart/"+fileName+"/"+fileName+"_"+timestamp+".png");
+	File destFile = new File(System.getProperty("user.dir")+
+	"/Screenshots/TestCases/Flipkart/"+fileName+"_"+timestamp+"/"+fileName+"_"+timestamp+".png");
 	FileUtils.copyFile(sourceFile, destFile);
 	System.out.println("Screenshot saved successfully");
 	

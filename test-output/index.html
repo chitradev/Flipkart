@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 6 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods, 6 failed,   </span>
+                    <span class="method-stats">6 methods, 3 failed,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -117,22 +117,31 @@
                         <a href="#" panel-name="suite-Suite" title="pages.HomePage" class="method navigator-link" hash-for-method="FP01(tshirt, testcase3)">FP01(tshirt, testcase3)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite">
                       <span>
-                        <img src="failed.png" width="3%"/>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="pages.HomePage" class="method navigator-link" hash-for-method="FP02(efg)">FP02(efg)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="pages.HomePage" class="method navigator-link" hash-for-method="FP02(hij)">FP02(hij)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="pages.HomePage" class="method navigator-link" hash-for-method="FP02(abc)">FP02(abc)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="pages.HomePage" class="method navigator-link" hash-for-method="FP02(hij)">FP02(hij)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -156,28 +165,10 @@
                   </a> <!-- FP01(shoes, testcase2) -->
                   <span class="method-name">FP01</span>
                   <span class="parameters">(shoes, testcase2)</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;L0Z3Pu&quot; type=&quot;submit&quot;&gt;...&lt;/button&gt; is not clickable at point (626, 28). Other element would receive the click: &lt;div class=&quot;_36HLxm col col-3-5&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=105.0.5195.127)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;CIPL1017-QA&apos;, ip: &apos;192.168.2.86&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f2e28939bd148a589eab5dca5c29429b, clickElement {id=7060a423-3bfe-447c-989a-dfeaae59a6ad}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\CIPL1017\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59119}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59119/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (f2e28939bd148a589eab5dca5c29429b)] -&gt; xpath: //button[@class=&apos;L0Z3Pu&apos;]]
-Session ID: f2e28939bd148a589eab5dca5c29429b
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at core.BaseSteps.clickToControl(BaseSteps.java:70)
-	at pages.HomePage.FP01(HomePage.java:50)
+                  <div class="stack-trace">java.lang.AssertionError: Test case failed expected [true] but found [false]
+	at pages.HomePage.FP01(HomePage.java:53)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
+... Removed 30 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -187,15 +178,15 @@ Session ID: f2e28939bd148a589eab5dca5c29429b
                   </a> <!-- FP01(, ) -->
                   <span class="method-name">FP01</span>
                   <span class="parameters">(, )</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;L0Z3Pu&quot; type=&quot;submit&quot;&gt;...&lt;/button&gt; is not clickable at point (626, 28). Other element would receive the click: &lt;div class=&quot;_36HLxm col col-3-5&quot;&gt;...&lt;/div&gt;
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;_2B099V&apos;]/a&quot;}
   (Session info: chrome=105.0.5195.127)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
 System info: host: &apos;CIPL1017-QA&apos;, ip: &apos;192.168.2.86&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8cdb808b56557ce49d263a561795b950, clickElement {id=e734615b-743b-4968-be22-e357a39d40b5}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\CIPL1017\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59218}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59218/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (8cdb808b56557ce49d263a561795b950)] -&gt; xpath: //button[@class=&apos;L0Z3Pu&apos;]]
-Session ID: 8cdb808b56557ce49d263a561795b950
+Command: [25a09164213fae74d586306d7bfb5f2b, findElement {using=xpath, value=//div[@class=&apos;_2B099V&apos;]/a}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\CIPL1017\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53921}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53921/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 25a09164213fae74d586306d7bfb5f2b
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
@@ -203,12 +194,14 @@ Session ID: 8cdb808b56557ce49d263a561795b950
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at core.BaseSteps.clickToControl(BaseSteps.java:70)
-	at pages.HomePage.FP01(HomePage.java:50)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
+	at core.BaseSteps.clickToControl(BaseSteps.java:69)
+	at pages.HomePage.FP01(HomePage.java:52)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
+... Removed 31 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -218,91 +211,27 @@ Session ID: 8cdb808b56557ce49d263a561795b950
                   </a> <!-- FP01(tshirt, testcase3) -->
                   <span class="method-name">FP01</span>
                   <span class="parameters">(tshirt, testcase3)</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;L0Z3Pu&quot; type=&quot;submit&quot;&gt;...&lt;/button&gt; is not clickable at point (626, 28). Other element would receive the click: &lt;div class=&quot;_36HLxm col col-3-5&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=105.0.5195.127)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;CIPL1017-QA&apos;, ip: &apos;192.168.2.86&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cd77151edb4c26f364ad06dbabc3ce8a, clickElement {id=239b2558-522b-40eb-a6de-05ade8a5006a}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\CIPL1017\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59166}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59166/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (cd77151edb4c26f364ad06dbabc3ce8a)] -&gt; xpath: //button[@class=&apos;L0Z3Pu&apos;]]
-Session ID: cd77151edb4c26f364ad06dbabc3ce8a
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at core.BaseSteps.clickToControl(BaseSteps.java:70)
-	at pages.HomePage.FP01(HomePage.java:50)
+                  <div class="stack-trace">java.lang.AssertionError: Test case failed expected [true] but found [false]
+	at pages.HomePage.FP01(HomePage.java:53)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
+... Removed 30 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">pages.HomePage</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="FP02(efg)">
                   </a> <!-- FP02(efg) -->
                   <span class="method-name">FP02</span>
                   <span class="parameters">(efg)</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;L0Z3Pu&quot; type=&quot;submit&quot;&gt;...&lt;/button&gt; is not clickable at point (626, 28). Other element would receive the click: &lt;div class=&quot;_36HLxm col col-3-5&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=105.0.5195.127)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;CIPL1017-QA&apos;, ip: &apos;192.168.2.86&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7b1199e889f03d3966693f1fc0c4d9ac, clickElement {id=9f06786c-19b5-4a6d-9e25-37c5ae6a39ef}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\CIPL1017\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59324}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59324/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (7b1199e889f03d3966693f1fc0c4d9ac)] -&gt; xpath: //button[@class=&apos;L0Z3Pu&apos;]]
-Session ID: 7b1199e889f03d3966693f1fc0c4d9ac
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at core.BaseSteps.clickToControl(BaseSteps.java:70)
-	at pages.HomePage.FP02(HomePage.java:60)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="FP02(hij)">
-                  </a> <!-- FP02(hij) -->
-                  <span class="method-name">FP02</span>
-                  <span class="parameters">(hij)</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;L0Z3Pu&quot; type=&quot;submit&quot;&gt;...&lt;/button&gt; is not clickable at point (626, 28). Other element would receive the click: &lt;div class=&quot;_36HLxm col col-3-5&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=105.0.5195.127)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;CIPL1017-QA&apos;, ip: &apos;192.168.2.86&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7b0d0894b7a5f411ac53566021e4c821, clickElement {id=dae6ed86-90ad-43c0-bb17-3bf0687214b1}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\CIPL1017\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59376}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59376/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (7b0d0894b7a5f411ac53566021e4c821)] -&gt; xpath: //button[@class=&apos;L0Z3Pu&apos;]]
-Session ID: 7b0d0894b7a5f411ac53566021e4c821
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at core.BaseSteps.clickToControl(BaseSteps.java:70)
-	at pages.HomePage.FP02(HomePage.java:60)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -311,33 +240,18 @@ Session ID: 7b0d0894b7a5f411ac53566021e4c821
                   </a> <!-- FP02(abc) -->
                   <span class="method-name">FP02</span>
                   <span class="parameters">(abc)</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;L0Z3Pu&quot; type=&quot;submit&quot;&gt;...&lt;/button&gt; is not clickable at point (626, 28). Other element would receive the click: &lt;div class=&quot;_36HLxm col col-3-5&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=105.0.5195.127)
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;CIPL1017-QA&apos;, ip: &apos;192.168.2.86&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.3&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [767688f4e465e627407034313afca9a4, clickElement {id=a657e8ae-c283-4d2a-a4f0-b541f411bffa}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\CIPL1017\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59265}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59265/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (767688f4e465e627407034313afca9a4)] -&gt; xpath: //button[@class=&apos;L0Z3Pu&apos;]]
-Session ID: 767688f4e465e627407034313afca9a4
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at core.BaseSteps.clickToControl(BaseSteps.java:70)
-	at pages.HomePage.FP02(HomePage.java:60)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="FP02(hij)">
+                  </a> <!-- FP02(hij) -->
+                  <span class="method-name">FP02</span>
+                  <span class="parameters">(hij)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -402,32 +316,32 @@ data.addRows(6);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'FP01')
 data.setCell(0, 2, 'pages.HomePage')
-data.setCell(0, 3, 1344);
+data.setCell(0, 3, 13625);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'FP01')
 data.setCell(1, 2, 'pages.HomePage')
-data.setCell(1, 3, 1283);
+data.setCell(1, 3, 3712);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'FP01')
 data.setCell(2, 2, 'pages.HomePage')
-data.setCell(2, 3, 1280);
+data.setCell(2, 3, 3664);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'FP02')
 data.setCell(3, 2, 'pages.HomePage')
-data.setCell(3, 3, 1149);
+data.setCell(3, 3, 586);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'FP02')
 data.setCell(4, 2, 'pages.HomePage')
-data.setCell(4, 3, 1125);
+data.setCell(4, 3, 250);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'FP02')
 data.setCell(5, 2, 'pages.HomePage')
-data.setCell(5, 3, 1120);
+data.setCell(5, 3, 119);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <span class="suite-total-time">Total running time: 21 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -469,81 +383,75 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">FP01(shoes, testcase2)</span>
-                <span class="method-start">10482 ms</span>
+                <span class="method-start">37763 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">Logout</span>
-                <span class="method-start">12226 ms</span>
+                <span class="method-start">42191 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">Log</span>
-                <span class="method-start">12528 ms</span>
+                <span class="method-start">42611 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">FP01(tshirt, testcase3)</span>
-                <span class="method-start">21796 ms</span>
+                <span class="method-start">113668 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">Logout</span>
-                <span class="method-start">23391 ms</span>
+                <span class="method-start">117926 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">Log</span>
-                <span class="method-start">23786 ms</span>
+                <span class="method-start">118372 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">FP01(, )</span>
-                <span class="method-start">45392 ms</span>
+                <span class="method-start">163320 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">Logout</span>
-                <span class="method-start">47018 ms</span>
+                <span class="method-start">177574 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">Log</span>
-                <span class="method-start">48316 ms</span>
+                <span class="method-start">178027 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">FP02(abc)</span>
-                <span class="method-start">81339 ms</span>
+                <span class="method-start">253550 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">Logout</span>
-                <span class="method-start">82875 ms</span>
+                <span class="method-start">253672 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">Log</span>
-                <span class="method-start">83262 ms</span>
+                <span class="method-start">254076 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">FP02(efg)</span>
-                <span class="method-start">96408 ms</span>
+                <span class="method-start">278459 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">Logout</span>
-                <span class="method-start">97938 ms</span>
+                <span class="method-start">279046 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">Log</span>
-                <span class="method-start">98328 ms</span>
+                <span class="method-start">279425 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">FP02(hij)</span>
-                <span class="method-start">108809 ms</span>
+                <span class="method-start">383470 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">Logout</span>
-                <span class="method-start">110305 ms</span>
+                <span class="method-start">383731 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
