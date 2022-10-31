@@ -14,6 +14,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -39,6 +40,7 @@ public class Browser {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
+		
 	}
 	
 	else if(browserName.equals("firefox")) {
@@ -66,6 +68,7 @@ public class Browser {
 	}	
 	
 	public static void takeScreenshot(String fileName) throws IOException {
+		
 	TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
 	File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 	
@@ -78,4 +81,7 @@ public class Browser {
 	
 	}
 	
+	public static String getCurrentURL(){
+		return driver.getCurrentUrl();
+	}
 }

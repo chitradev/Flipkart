@@ -8,14 +8,17 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import PageLocators.*;
 import configs.*;
+import controls.Table;
 import dev.failsafe.Timeout;
 import utils.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
@@ -23,20 +26,21 @@ import org.testng.annotations.Test;
 
 public class BaseSteps  {
 	
-	 public static WebDriver driver;
-	 protected WebElement element;
+	 	public static WebDriver driver;
+	 	protected WebElement element;
 		protected Actions action;
 		protected static WebDriverWait wait;
 		protected Wait<WebDriver> fluentWait;
-		public String xpath ="";
-		//public static By by = null;
+		public static String xpath ="";
+		public static By by = null;
 	 
 	
-	public static void driver() throws IOException{
+	public static WebDriver driver() throws IOException{
 		 
-	driver= Browser.initiateWebDriver();
+	return driver= Browser.initiateWebDriver();
 	  
 	 } 
+	
 	public static void driverquit() {
 		driver.quit();
 	}
@@ -56,12 +60,14 @@ public class BaseSteps  {
 	 }	 	
 	
 	public static String getTextFromControl(String controlName, String pageName) throws InterruptedException, IOException {        
-		File(pageName);	
 		
+		File(pageName);		
 		WebElement getText = driver.findElement(By.xpath(ElementFactory.locator(controlName, pageName)));		
-		 String Text=getText.getText();		 
+		String Text=getText.getText();		 
         return Text;
     }
+	
+	
 	
 	 public static void clickToControl(String controlName, String pageName) throws InterruptedException, IOException {
 		 File(pageName);	
@@ -71,6 +77,25 @@ public class BaseSteps  {
 	       
 	    }
 	 
+		public static void scrollDown() {
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		}
+		
+		public void scrollToMiddle() {
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollTo(0, 250)");
+		}
+
+		public void scrollUp() {
+			
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, 0)");
+		
+		}
+	 
 	 public static void setTextToControl(String controlName, String text, String pageName) throws InterruptedException, IOException {
 	    File(pageName);  
 	    loadControl(controlName, pageName);
@@ -78,6 +103,7 @@ public class BaseSteps  {
 		 setText.clear();		 
 		 setText.sendKeys(text);		 		 
 	    }
+	 
 	 public static void setKeys(String controlName, String text, String pageName) throws IOException {
 		 File(pageName);  
 		loadControl(controlName, pageName);
@@ -97,7 +123,7 @@ public class BaseSteps  {
 		 loadControl(controlName, pageName);
 		 WebElement element=driver.findElement(By.xpath(ElementFactory.locator(controlName, pageName)));		
 		 Actions act = new Actions(driver);
-		act.moveToElement(element).perform();
+		act.moveToElement(element).click().build().perform();
 	 }
 	 
 	 public static void loadControl(String controlName,String pageName){
@@ -140,6 +166,90 @@ public class BaseSteps  {
 		
 	}	
 	
+	public static boolean WebElementDisplayed(String controlName,String pageName) throws IOException {		
+		 File(pageName);  
+		loadControl(controlName, pageName);
+		WebElement element = driver.findElement(By.xpath(ElementFactory.locator(controlName, pageName))); 
+		return element.isDisplayed();				
+		
+	}	
+	
+	public static String getCellTableText(String tableName, String rowIndex, String colName, String pageName) throws IOException{
+		//waitForTableDataLoaded(tableName,pageName);
+		String tableLocator=ElementFactory.locator(tableName, pageName);
+		String cellLocator = String.format("%s//tbody/tr[%s]/*[count(%s//tbody/tr[1]/*[descendant-or-self::node()[starts-with(normalize-space(),'%s')]]/preceding-sibling::*)+1]",tableLocator,rowIndex.trim(),tableLocator,colName.trim());
+		return driver.findElement(By.xpath(cellLocator)).getText().trim().replaceAll("[\\t\\n\\r]+"," ");
+		
+	}
+	
+	public static void clickCellTableText(String tableName, String rowIndex, String colName, String pageName) throws IOException{
+		//waitForTableDataLoaded(tableName,pageName);
+		String tableLocator=ElementFactory.locator(tableName, pageName);
+		String cellLocator = String.format("%s//tbody/tr[%s]/*[count(%s//tbody/tr[1]/*[descendant-or-self::node()[starts-with(normalize-space(),'%s')]]/preceding-sibling::*)+1]",tableLocator,rowIndex.trim(),tableLocator,colName.trim());
+		driver.findElement(By.xpath(cellLocator)).click();
+		
 	}
 
+	public static int getRowTableCount(String tableName,String pageName) throws IOException {
+	
+		String xpath=ElementFactory.locator(tableName, pageName);
+		String rowLocator=String.format("%s//tbody/tr", xpath);		
+		return driver.findElements(By.xpath(rowLocator)).size();		
+		
+	}
+	
+	public static void selectByVisibleTextFromDropdown(String controlName,String option,String pageName) throws InterruptedException, IOException {
+		 File(pageName);
+		 loadControl(controlName, pageName);
+		 WebElement element=driver.findElement(By.xpath(ElementFactory.locator(controlName, pageName)));		
+		 Select ddl = new Select(element);
+		ddl.selectByVisibleText(option);
+	 }
+	
+	public static void selectFirstOptionFromDropdown(String controlName,String pageName) throws InterruptedException, IOException {
+		 File(pageName);
+		 loadControl(controlName, pageName);
+		 WebElement element=driver.findElement(By.xpath(ElementFactory.locator(controlName, pageName)));		
+		 Select ddl = new Select(element);
+		ddl.selectByIndex(0);
+	 }
+	
+	public static void selectByIndexFromDropdown(String controlName,int index,String pageName) throws InterruptedException, IOException {
+		 File(pageName);
+		 loadControl(controlName, pageName);
+		 WebElement element=driver.findElement(By.xpath(ElementFactory.locator(controlName, pageName)));		
+		 Select ddl = new Select(element);
+		ddl.selectByIndex(index);
+	 }
+	
+	public void clickLabelwithText(String controlName, String Text,String pageName) throws IOException{
+		File(pageName);
+		loadControl(controlName, pageName);			
+		List<WebElement> Elements=driver.findElements(By.xpath(ElementFactory.locator(controlName, pageName)));
+		for(WebElement Element:Elements)
+		{
+			if(Element.getText().equals(Text))
+			{
+				Element.click();
+				break;
+			}
+		}
+	}
+	
+	public void InactiveCheckBox(String controlName,String pageName) throws IOException {
+		WebElement element=driver.findElement(By.xpath(ElementFactory.locator(controlName, pageName)));
+		if(element.isSelected()==true)
+			element.click();
+	}
 
+	public void ActiveCheckBox(String controlName,String pageName) throws IOException {
+		WebElement element=driver.findElement(By.xpath(ElementFactory.locator(controlName, pageName)));
+		if(!element.isSelected()==false)
+			element.click();
+	}
+	
+	
+}	
+
+	
+	
